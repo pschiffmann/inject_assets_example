@@ -1,0 +1,7 @@
+name: my_components
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+dependencies:
+  angular: ^5.2.0
+  angular_components: ^0.11.0
+  inject_assets_builder: ^1.0.0

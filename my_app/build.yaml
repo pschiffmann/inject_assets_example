@@ -1,0 +1,5 @@
+global_options:
+  inject_assets_builder|inject_scss_files:
+    options:
+      asset_overrides:
+        'my_components|lib/_variables.default.scss': 'my_app|lib/_variables.scss'

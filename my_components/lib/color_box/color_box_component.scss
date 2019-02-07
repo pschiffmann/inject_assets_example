@@ -1,0 +1,10 @@
+@import '../variables';
+
+:host {
+  display: block;
+  background-color: $my-components-accent-primary;
+}
+
+h1 {
+  color: $my-components-text-primary;
+}

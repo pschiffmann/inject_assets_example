@@ -1,0 +1,23 @@
+targets:
+  $default:
+    builders:
+      my_components|scss_builder:
+        enabled: True
+      inject_assets_builder|inject_scss_files:
+        enabled: true
+
+builders:
+  # The builder definition is copied from angular_components:
+  # https://github.com/dart-lang/angular_components/blob/c6cb3d783e72ff1ed7974f18b7f169778c73d39b/angular_components/build.yaml#L17-L27
+  # But we need to add the `applies_builders` key or the SCSS builder won't see
+  # the injected file.
+  scss_builder:
+    import: "package:angular_components/builder.dart"
+    builder_factories: ["scssBuilder"]
+    build_to: cache
+    build_extensions:
+      .scss: [".scss.css"]
+      .sass: [".scss.css"]
+    applies_builders:
+      - sass_builder|sass_source_cleanup
+    required_inputs: [".scss", ".sass"]
